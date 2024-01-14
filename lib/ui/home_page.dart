@@ -34,14 +34,18 @@ class _HomePageState extends State<HomePage> {
       label: "Headline",
     ),
     BottomNavigationBarItem(
+      icon: Icon(Platform.isIOS ? CupertinoIcons.bookmark : Icons.collections_bookmark),
+      label: BookmarksPage.bookmarksTitle,
+    ),
+    BottomNavigationBarItem(
       icon: Icon(Platform.isIOS ? CupertinoIcons.settings : Icons.settings),
-      label: "Setting",
+      label: SettingsPage.settingsTitle,
     ),
   ];
 
   final List<Widget> _listWidget = [
     const ArticleListPage(),
-    BookmarksPage(),
+    const BookmarksPage(),
     const SettingsPage(),
   ];
 
