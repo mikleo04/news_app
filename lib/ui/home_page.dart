@@ -4,6 +4,7 @@ import 'package:dicoding_news_app/provider/news_provider.dart';
 import 'package:dicoding_news_app/provider/scheduling_provider.dart';
 import 'package:dicoding_news_app/ui/article_detail_page.dart';
 import 'package:dicoding_news_app/ui/article_list_page.dart';
+import 'package:dicoding_news_app/ui/bookmarks_page.dart';
 import 'package:dicoding_news_app/utils/notification_helper.dart';
 import 'package:dicoding_news_app/widgets/platform_widget.dart';
 import 'package:dicoding_news_app/ui/setting_page.dart';
@@ -39,15 +40,9 @@ class _HomePageState extends State<HomePage> {
   ];
 
   final List<Widget> _listWidget = [
-    ChangeNotifierProvider<NewsProvider>(
-      create: (_) => NewsProvider(apiServices: ApiServices()),
-      child: const ArticleListPage(),
-    ),
-
-    ChangeNotifierProvider<SchedulingProvider>(
-      create: (_) => SchedulingProvider(),
-      child: const SettingsPage(),
-    ),
+    const ArticleListPage(),
+    BookmarksPage(),
+    const SettingsPage(),
   ];
 
   @override
